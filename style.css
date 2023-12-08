@@ -1,99 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'IM Fell Great Primer SC', serif;
-    font-family: 'Playfair Display', serif;
-    color: #fff;
+    font-family: 'Inter', sans-serif;
 }
-
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    min-height: 100vh;
-    background: #24242A;
-    color: #edf0f1;
+    height: 100vh;
+    background-color: #24242A;
+    background-image: url('mun.svg');
+    background-size: cover;
+    background-position: center;
 }
 
-li, a, button {
-    font-family: 'IM Fell Great Primer SC', serif;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #edf0f1;
-    text-decoration: none;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-}
-
-.logo{
-    cursor: pointer;
-    height: 126px;
-    width: 421px;
-}
-
-.nav__links{
+li{
     list-style: none;
 }
 
-.nav__links li {
-    display: inline-block;
-    padding: 0px 20px;
+a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1rem;
 }
 
-.nav__links li a {
-    transition: all 0.3s ease 0s;
+a:hover{
+    color: rgb(25, 190, 246);
 }
 
-.nav__links li a:hover {
-    color: #0089a9;
+header{
+    position: relative;
+    padding: 0 2rem;
 }
 
-button{
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
-    border-radius: 50px;
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo a{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    display: none;
 }
 
-button:hover{
-    background-color: rgba(0, 136, 169, 0.8);
+.action_btn{
+    background-color: rgb(25, 190, 246);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2s ease;
 }
 
-.banner{
-    width: 170vh;
-    height: 100vh;
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+/* dropdown */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
     display: flex;
     justify-content: center;
+}
+
+/*HERO*/
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    background-image: url("mun.svg");
-    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
 }
 
-.banner h1{
-    font-size: 5rem;
-    background-color: transparent;
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.banner p{
-    font-size: 2rem;
-    background-color: transparent;
-    position: absolute;
-    top: 750px;
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block
+    }
+
+    .dropdown_menu{
+        display: block
+    }
+
 }
 
+@media(max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+/* Card styles */
+
+.cards{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
 
 .container{
     display: flex;
@@ -115,7 +181,6 @@ button:hover{
     border-radius: 15px;
     margin: 30px;
 }
-
 
 .container .card .box{
     position: absolute;
@@ -142,7 +207,6 @@ button:hover{
     width: 50%;
     height: 100%;
     background: rgba(255, 255, 255, 0.05);
-
 }
 
 .container .card .box:hover{
@@ -150,12 +214,10 @@ button:hover{
     box-shadow: 0 40px 70px rgba(0,0,0,0.5);
 }
 
-
 .container .card .box .content{
     padding: 20px;
     text-align: center;
 }
-
 
 .container .card .box .content h2{
     position: absolute;
@@ -170,7 +232,6 @@ button:hover{
     color: rgba(225,225,225,0.5);
     z-index: 1;
     transition: 0.5s;
-
 }
 
 .container .card .box .content p{
