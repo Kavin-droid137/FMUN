@@ -127,8 +127,13 @@ section#hero{
 }
 
 #hero h1{
-    font-size: 3rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
+}
+
+#hero p{
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 @media(max-width: 992px){
