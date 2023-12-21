@@ -10,7 +10,6 @@
 body{
     height: 100vh;
     background-color: #24242A;
-    background-image: url('mun.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,7 +32,10 @@ a:hover{
 header{
     position: relative;
     padding: 0 2rem;
+    background-image: url(mun.svg);
 }
+
+
 
 .navbar{
     width: 100%;
@@ -385,6 +387,14 @@ footer{
     }
 }
 
+#myVideo {
+    width: 100%; /* Set width to 100% to fill the container */
+    max-width: 2400px;
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    max-height: calc(100vh - 60px); /* Adjust max-height to fit the available space between navbar and cards */
+}
 
-
+#myVideo {
+    z-index: 2; /* Set a higher z-index to ensure it's displayed above other elements if needed */
+}
 
