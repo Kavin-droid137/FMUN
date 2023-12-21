@@ -9,10 +9,12 @@
 
 body{
     height: 100vh;
-    background-color: #24242A;
+    background: #141e30; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #141e30, #243b55);  /* Chrome 10-25, Safari 5.1-6 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: #fff;
 }
 
 li{
@@ -35,7 +37,10 @@ header{
     background-image: url(mun.svg);
 }
 
-
+.navbar .logo{
+    display: flex;
+    align-items: center; 
+}
 
 .navbar{
     width: 100%;
@@ -47,9 +52,15 @@ header{
     align-items: center;
 }
 
+.navbar .logo img {
+    margin-right: 10px; /* Add some margin to separate the logo and text */
+}
+
 .navbar .logo a{
     font-size: 1.2rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .links{
@@ -71,7 +82,7 @@ header{
     border: none;
     outline: none;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: scale 0.2s ease;
@@ -102,7 +113,7 @@ header{
 }
 
 .dropdown_menu.open {
-    height: 270px;
+    height: 320px;
 }
 
 .dropdown_menu li{
@@ -398,3 +409,11 @@ footer{
     z-index: 2; /* Set a higher z-index to ensure it's displayed above other elements if needed */
 }
 
+
+.aboutUs{
+    width: 100%;
+    max-width: 1100px;
+    line-height: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
